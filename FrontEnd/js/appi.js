@@ -6,10 +6,12 @@ try {
 // Faire un appel à l'API
 const response = await fetch(apiUrl);
 
+
 // Vérifier si la réponse est correcte
 if (!response.ok) {
 throw new Error('Erreur lors de la récupération des données');
 }
+console.log("Erreur lors de la récupération des données")
 
 // Convertir la réponse en JSON
 const projects = await response.json();
