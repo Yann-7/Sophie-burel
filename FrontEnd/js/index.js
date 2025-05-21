@@ -3,8 +3,8 @@
 let works = [];
 //je stockes tous les travaux dans un array vide
 
-// je fais ton fetch
-fetch('http://localhost:5678/api.js/works')
+// je fais mon fetch
+fetch('http://localhost:5678/api/works')
   .then(res => {
     if (res.ok) {
       return res.json();
@@ -21,7 +21,7 @@ fetch('http://localhost:5678/api.js/works')
   });
 
 async function getWorks() {
-  const URL = "http://localhost:5678/api.js/works"; // Correction de l'URL
+  const URL = "http://localhost:5678/api/works"; // Correction de l'URL
 
   try {
     const reponse = await fetch(URL);
@@ -40,7 +40,7 @@ async function getWorks() {
 }
 
 function getWorks(works) {
-  /* je cibles ton élément html*/
+  /* je cibles mon élément html*/
   const gallery = document.querySelector(".gallery");
 
   /* je fais une boucle for sur les works de ton array */
@@ -54,14 +54,14 @@ function getWorks(works) {
     /* j'associe les attributs requis du html */
     img.src = works[i].imageUrl;
     figcaption.innerHTML = works[i].title;
-    /* et on rattache les éléments aux parents pour structurer le html */
+    /* je rattache les éléments aux parents pour structurer le html */
     figure.appendChild(img);
     figure.appendChild(figcaption);
     gallery.appendChild(figure);
   }
 }
   
-/*getWorks();
+getWorks();
 
 // Création d'une figure HTML
 const figure = document.createElement("figure");
